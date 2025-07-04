@@ -1,3 +1,3 @@
-output "instance_public_ip" {
-  value = aws_instance.one[1].public_ip
+output "instance_public_ips" {
+  value = [for instance in aws_instance.one : instance.public_ip]
 }
